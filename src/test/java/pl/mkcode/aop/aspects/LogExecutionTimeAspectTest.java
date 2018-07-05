@@ -37,4 +37,11 @@ class LogExecutionTimeAspectTest {
 
         outputCapture.expect(stringContainsInOrder(asList("before Logged", "feeding", "after Logged")));
     }
+
+    @Test
+    void testBeforeAndAfterAnnotations(CaptureSystemOutput.OutputCapture outputCapture) {
+        zooService.feed(new Animal());
+
+        outputCapture.expect(stringContainsInOrder(asList("before Logged", "feeding", "after Logged")));
+    }
 }
